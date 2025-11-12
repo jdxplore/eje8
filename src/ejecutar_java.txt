@@ -1,8 +1,0 @@
-name: ejecutar hola
-
-on:
-  push:
-    branches: [main]
-      
-jobs: 
-  build: 

@@ -1,0 +1,32 @@
+name: ejecutar java 
+on:
+  push:
+    branches: [ main ]
+    
+    
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    
+    steps: 
+     -name: Checkout code
+      uses: actions/Checkout@v
+      
+     -name: Set up JDK (para java)
+      uses: actions/setup-java@v4
+      whit:
+        java-version: '17'
+        distribution: 'temuri'
+        
+     -name: Compile java program
+      run:|
+        # Busca todos archivos que terminan en .java, los guarda en sources.txt y los compila
+        # Despues de eso borra el sources.txt
+        find . -name "*.java" > sources.txt
+        javac @sources.txt
+        rm sources.txt      
+    -name: Run java program
+      run:|
+      #Ejecuta el programa principal
+      java -cp src hola
+    
