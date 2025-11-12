@@ -3,7 +3,6 @@ on:
   push:
     branches: [ main ]
     
-    
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
@@ -12,7 +11,7 @@ jobs:
      -name: Checkout code
       uses: actions/Checkout@v
       
-     -name: Set up JDK (para java)
+     -name: Set up JDK 
       uses: actions/setup-java@v4
       whit:
         java-version: '17'
